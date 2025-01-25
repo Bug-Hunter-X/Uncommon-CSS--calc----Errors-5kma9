@@ -1,0 +1,19 @@
+/* Correcting calc() errors within flexbox */
+.container {
+  display: flex;
+  width: 500px; /* Explicitly define width for calc to work correctly */
+}
+
+.item {
+  width: calc(50% - 10px);
+}
+
+/* Correcting operator precedence in nested calc() */
+.element {
+  width: calc(calc(100% - 20px) / 2); /* Add parenthesis to ensure correct order of operations */
+}
+
+/* Alternative for better readability */
+.element {
+  width: calc( (100% - 20px) / 2 );
+}
